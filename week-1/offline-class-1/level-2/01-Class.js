@@ -10,3 +10,4 @@ class Animal {
 }
 
 
+console.log(Animal.describe())
