@@ -9,15 +9,15 @@ router.use(Express.json());
 // Admin Routes
 router.post("/signup", (req, res) => {
   // Implement admin signup logic
-  const email = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
-  const emailResponse = emailSchema.safeParse(email);
+  const usernameResponse = emailSchema.safeParse(username);
   const passResponse = passwordSchema.safeParse(password);
-  if (!emailResponse.success || !passResponse.success) {
-    res.status(403).send("invalid email or password");
+  if (!usernameResponse.success || !passResponse.success) {
+    res.status(403).send("invalid username or password");
   } else {
     Admin.create({
-      email,
+      username,
       password,
     });
     res.status(403).json("Admin created successfully");

@@ -6,12 +6,12 @@ mongoose.connect(
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
-  email: String,
+  username: String,
   password: String,
 });
 
 const UserSchema = new mongoose.Schema({
-  email: String,
+  username: String,
   password: String,
   purchasedCourses: [
     {
@@ -26,7 +26,7 @@ const CourseSchema = new mongoose.Schema({
   description: String,
   price: Number,
   imageLink: String,
-  published: Boolean,
+  ispublished: Boolean,
 });
 
 const Admin = mongoose.model("Admin", AdminSchema);
